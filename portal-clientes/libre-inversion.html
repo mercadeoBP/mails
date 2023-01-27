@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+        font-family:Arial, Helvetica, sans-serif;
+        color: #0F113E;
+    }
+
+    table{
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+        box-sizing: border-box;
+    }
+
+    td{
+        padding: 0;
+        
+    }
+
+    .mx-cont{
+        padding-right: 32px;
+        padding-left: 32px;
+    }
+
+    .my-cont{
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .txt-center{
+        text-align: center;
+    }
+
+    .txt-right{
+        text-align: right;
+    }
+
+    .w-50{
+        width: 50%;
+        padding: 8px;
+    }
+
+    .monto-apro{
+        background: #F3F2FF;
+        border: solid 1px;
+        border-radius: 4px;
+        border-color: #BFBCFD;
+        margin-bottom: 16px;
+    }
+
+    .linea-td{
+        border-left: solid 1px;
+        border-color: #A7AAF4;
+        margin-bottom: 16px;
+    }
+
+
+    .monto-desem{
+        background: white;
+        border: solid 1px;
+        border-radius: 4px;
+        border-color: #E5E5E5;
+        border-collapse: collapse;
+    }
+
+    .monto-desem td{
+        background: white;
+        border-bottom: solid 1px;
+        border-color: #E5E5E5;
+        border-bottom-style: dotted;
+        
+    }
+
+    .l-bottom{
+        border-bottom: solid 1px;
+        border-color: #C9EFFF;
+    }
+
+    .display-1{
+        font-size: 32px;
+    }
+
+    .display-2{
+        font-size: 24px;
+    }
+
+    .f-12{
+        font-size: 12px;
+    }
+
+    .f-18{
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    .f-20{
+        font-size: 20px;
+    }
+
+
+</style>
+
+<body>
+    <table cellspacing="0" align="center" cellpadding="0" border="0" style="background:white;">
+        <tbody>
+            <!--header-->
+            <tr>
+                <td>
+                    <table class="mx-cont my-cont" style="background:#EBF4FB">
+                        <tbody>
+                            <tr>
+                                <td>    
+                                    <img src="https://storage-masivdrive.masivapp.com/4783/90338731-4821-43ef-a164-f0ec8d042b45/0c0d1c2a-c623-409f-b6ce-e14ad0bdc4b4.png" alt="">
+                                </td>
+                                <td class="txt-right f-18">
+                                    N.º de crédito <b>{{NUMERO_CARPETA}}</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+
+            <!--Banner-->
+            <tr>
+                <td>
+                    <table style="background:white;border-collapse: collapse;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img class="w-100" src="https://storage-masivdrive.masivapp.com/4783/90338731-4821-43ef-a164-f0ec8d042b45/90b4bc53-fc84-4bfb-aa36-29f04de319dc.png" alt="">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <!--intro y nombre-->
+            <tr>
+                <td>
+                    <table class="mx-cont my-cont" style="background:white">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p class="display-2"><b>Hola, {{NOMBRE_CLIENTE}}</b></p>
+                                    <p class="f-18">Te damos la bienvenida a Bayport y adjunto te enviamos 
+                                        un resumen detallado de las condiciones del crédito 
+                                        de libranza que adquiriste con nosotros.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <!--Info monto aprobado-->
+            <tr>
+                <td>
+                    <table class="mx-cont my-cont" style="background:#ECEBFC">
+                        <tbody>
+                            <!--Monto aprobado-->
+                            <tr>
+                                <td>
+                                    <table class="display-1 my-cont" style="background: #ECEBFC;">
+                                        <tbody>
+                                            <tr>
+                                                <td class="w-50">
+                                                    Monto aprobado
+                                                </td>
+                                                <td class="w-50">
+                                                    <b>${{MONTO_APROBADO}}</b>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+
+                            <!--linea de credito-->
+                            <tr>
+                                <td>
+                                    <table class="monto-apro f-18">
+                                        <tbody>
+                                            <tr>
+                                                <td class="w-50">
+                                                    <img src="https://storage-masivdrive.masivapp.com/4783/90338731-4821-43ef-a164-f0ec8d042b45/f0c403d0-e7c2-4b76-a96e-53e4271ebf32.png" alt="" style="float: left;padding-right: 8px;"> 
+                                                    <p> Línea de crédito </p>
+                                                </td>
+                                                <td class="w-50 linea-td">
+                                                    <b>{{NOMBRE_LINEA_CREDITO}}</b>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+
+                            <!--Cuota mensual-->
+                            <tr>
+                                <td>
+                                    <table class="monto-apro f-18">
+                                        <tbody>
+                                            <tr>
+                                                <td class="w-50">
+                                                    <img src="https://storage-masivdrive.masivapp.com/4783/90338731-4821-43ef-a164-f0ec8d042b45/6841b55b-cd98-4e9e-909d-5fca4dbb7b57.png" alt="" style="float: left;padding-right: 8px;"> 
+                                                    <p>Cuota mensual</p>
+                                                </td>
+                                                <td class="w-50 linea-td">
+                                                    <b>${{VALOR_CUOTA}}</b>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+
+                            <!--plazo-->
+                            <tr>
+                                <td>
+                                    <table class="monto-apro f-18">
+                                        <tbody>
+                                            <tr>
+                                                <td class="w-50">
+                                                    <img src="https://storage-masivdrive.masivapp.com/4783/90338731-4821-43ef-a164-f0ec8d042b45/ab9ae99e-20b0-4bb7-8f75-21658126b970.png" alt="" style="float: left;padding-right: 8px;"> 
+                                                    <p>Plazo</p>
+                                                </td>
+                                                <td class="w-50 linea-td">
+                                                    <b>{{NUMERO_CUOTAS}} meses</b>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <!--Información credito-->
+            <tr>
+                <td>
+                    <table class="mx-cont my-cont" style="background:#EBF5FA">
+                        <tbody>
+                            <!--titulo descripcion credito-->
+                            <tr>
+                                <td class="txt-center f-20">
+                                    <p><b>Información de crédito</b></p>
+                                </td>
+                            </tr>
+                            <!--Descipción credito-->
+                            <tr>
+                                <td>
+                                    <table class="monto-desem f-18">
+                                        <tbody>
+
+                                            <tr>
+                                                <td class="w-50">
+                                                    Tasa interés*
+                                                </td>
+                                                <td class="w-50">
+                                                    <b>{{TASA_INTERES}}%</b>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="w-50">
+                                                    Tasa seguro de vida
+                                                </td>
+                                                <td class="w-50">
+                                                    <b>{{TASA_SEGURO_VIDA}}%</b>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="w-50">
+                                                    Fianza anticipada**
+                                                </td>
+                                                <td class="w-50">
+                                                    <b>{{TASA_AVAL}}% IVA incluido</b>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="w-50">
+                                                    Fecha de inicio de crédito
+                                                </td>
+                                                <td class="w-50">
+                                                    <b>{{FECHA_DESEMBOLSO}}</b>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="w-50">
+                                                    Prima seguro de accidentes personales
+                                                </td>
+                                                <td class="w-50">
+                                                    <b>${{VALOR_SEGURO_VOL}}</b>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="w-50">
+                                                    Comisión de corretaje
+                                                </td>
+                                                <td class="w-50">
+                                                    <b>{{TASA_COMISION}}%</b>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+
+                            <!--Disclaimer informacion credito-->
+                            <tr>
+                                <td class="f-12">
+                                    <p>*N.M.V. = Nominal mes vencido <br>
+                                        ** El porcentaje corresponde al valor del crédito</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <!--Aclaración desembolso credito-->
+            <tr>
+                <td>
+                    <table class="mx-cont my-cont " style="background:#EBF5FA;">
+                        <tbody>
+                            <!--Titulo Aclaracion desembolso-->
+                            <tr>
+                                <td class="txt-center f-20">
+                                    <p><b>Aclaración de desembolso</b></p>
+                                </td>
+                            </tr>
+                            
+                            <!--Info aclaracion desembolso-->
+                            <tr>
+                                <td>
+                                    <table class="monto-desem f-18">
+                                        <tbody>
+                                            <tr>
+                                                <td class="w-50">
+                                                    Monto aprobado
+                                                </td>
+                                                <td class="w-50">
+                                                    <b>${{MONTO_APROBADO}}</b>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="w-50">
+                                                    Descuento Cheque / Transferencia
+                                                </td>
+                                                <td class="w-50">
+                                                    <b>${{VALOR_CHEQUE}}</b>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="w-50">
+                                                    Descuento Fianza
+                                                </td>
+                                                <td class="w-50">
+                                                    <b>${{VALOR_AVAL}}</b>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="w-50">
+                                                    Descuento seguro de accidentes personales
+                                                </td>
+                                                <td class="w-50">
+                                                    <b>${{VALOR_SEGURO_VOL}}</b>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="w-50">
+                                                    Comisión corretaje
+                                                </td>
+                                                <td class="w-50">
+                                                    <b>${{VALOR_COMISION}}</b>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="w-50">
+                                                    Valor a girar
+                                                </td>
+                                                <td class="w-50">
+                                                    <b>${{VALOR_GIRADO}}</b>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <!--portal clientes-->
+            <tr>
+                <td>
+                    <table class="mx-cont my-cont" style="background: #ECEBFC;">
+                        <tbody>
+                            <!--Titulo-->
+                            <tr>
+                                <td class="txt-center">
+                                    <p class="f-20" style="margin-block-end: 6px;"><b>Regístrate en el Portal Clientes</b></p>
+                                    <p style="margin-block-start: 4px;">Gestiona tus consultas y certificaciones en un solo lugar </p>
+                                </td>
+                            </tr>
+                            <!--Paso a paso-->
+                            <tr>
+                                <td>
+                                    <table style="padding-bottom: 20px;">
+                                        <tbody>
+                                            <!--bloque pasos a-->
+                                            <tr>
+                                                <!--paso 1-->
+                                                <td style="padding-right: 10px;padding-bottom: 10px;padding-top: 10px;width: 50%;">
+                                                    <table style="background: white;border-radius: 4px;padding: 16px;height: 210px;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <p class="display-2" style="color: #5C60C3;margin-block-end: 0;margin-block-start:8px;">1.</p> 
+                                                                    <p style="margin-block-start: 4px;">Ingresa a nuestro <b>Portal web</b><br>
+                                                                        <a href="https://www.bayportcolombia.com/" target="_blank">bayportcolombia.com</a>
+                                                                    </p>
+                                                                    <img src="src/paso1.png" alt=""> 
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>        
+                                                </td>
+                                                <!--paso 2-->
+                                                <td style="padding-left: 10px;padding-bottom: 10px;padding-top: 10px;width: 50%;">
+                                                    <table style="background: white;border-radius: 4px;padding: 16px;height: 210px;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <p class="display-2" style="color: #5C60C3;margin-block-end: 0;margin-block-start:8px;">2.</p> 
+                                                                    <p style="margin-block-start: 4px;">Da clic en el botón 
+                                                                        <span style="white-space: nowrap;"><b>Portal Clientes</b></span>                                                             
+                                                                    </p>
+                                                                    <img src="src/paso2.png" alt=""> 
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>        
+                                                </td>
+                                            </tr>
+                                            <!--bloque pasos b-->
+                                            <tr>
+                                                <!--paso 3-->
+                                                <td style="padding-right: 10px;padding-bottom: 10px;padding-top: 10px;width: 50%;">
+                                                    <table style="background: white;border-radius: 4px;padding: 16px; height:230px">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <p class="display-2" style="color: #5C60C3;margin-block-end: 0;margin-block-start:8px;">3.</p> 
+                                                                    <p style="margin-block-start: 4px;">Elige la opción <b>Reestablecer contraseña </b> 
+                                                                         e ingresa tu número de documento
+                                                                    </p>
+                                                                    <img src="src/paso3.png" alt=""> 
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>        
+                                                </td>
+                                                <!--paso 4-->
+                                                <td style="padding-left: 10px;padding-bottom: 10px;padding-top: 10px;width: 50%;">
+                                                    <table style="background: white;border-radius: 4px;padding: 16px; height:230px">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <p class="display-2" style="color: #5C60C3;margin-block-end: 0;margin-block-start:8px;">4.</p> 
+                                                                    <p style="margin-block-start: 4px;">Escoge el medio por el cual 
+                                                                        deseas recibir una contraseña temporal</p>
+                                                                    <img src="src/paso4.png" alt=""> 
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>        
+                                                </td>
+                                            </tr>
+                                            <!--bloque pasos c-->
+                                            <tr>
+                                                <!--paso 5-->
+                                                <td style="padding-right: 10px;padding-bottom: 10px;padding-top: 10px;width: 50%;">
+                                                    <table style="background: white;border-radius: 4px;padding: 16px; height:210px">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <p class="display-2" style="color: #5C60C3;margin-block-end: 0;margin-block-start:8px;">5.</p> 
+                                                                    <p style="margin-block-start: 4px;">Ingresa la contraseña temporal y 
+                                                                        asigna una nueva
+                                                                    </p>
+                                                                    <img src="src/paso5.png" alt=""> 
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>        
+                                                </td>
+                                                <!--paso 6-->
+                                                <td style="padding-left: 10px;padding-bottom: 10px;padding-top: 10px;width: 50%;">
+                                                    <table style="background: white;border-radius: 4px;padding: 16px; height:210px">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <p class="display-2" style="color: #5C60C3;margin-block-end: 0;margin-block-start:8px;">6.</p> 
+                                                                    <p style="margin-block-start: 4px;">¡Y listo! Ingresa al Portal 
+                                                                        Clientes con tu nueva contraseña </p>
+                                                                    <img src="src/paso6.png" alt=""> 
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>        
+                                                </td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <!--Notas aclaratorias-->
+            <tr>
+                <td>
+                    <table class="mx-cont my-cont" style="background: white;">
+                        <tbody>
+                            <!--Titulo notas-->
+                            <tr>
+                                <td class="txt-center f-20">
+                                    <p><b>Ten en cuenta</b></p>
+                                </td>
+                            </tr>
+                            <!--Notas-->
+                            <tr>
+                                <td class="f-12">
+                                    <p><b>Nota 1:</b> Los valores indicados están en pesos colombianos.</p>
+                                    <p><b>Nota 2:</b> Al adquirir el crédito con Bayport, se adquirió 
+                                        un seguro de vida grupo deudor con la compañía Pan American Life. 
+                                        Adicionalmente, se aceptó contractualmente la Fianza otorgada por 
+                                        AFIANCOL COLOMBIA S.A. (sin perjuicio de lo establecido por la ley 
+                                        colombiana). Bayport Colombia S.A. es una compañía del sector real, 
+                                        vigilada por la Superintendencia de Sociedades, dedicada a la 
+                                        originación de créditos bajo la modalidad de libranza. El otorgamiento 
+                                        y las condiciones del crédito podrán variar según el estudio de 
+                                        crédito y calificación del cliente conforme las políticas vigentes 
+                                        de Bayport Colombia S.A. Aplican términos y condiciones. En caso 
+                                        de no presentarse la incorporación de la cuota de la pagaduría, 
+                                        el cliente deberá efectuar el pago por ventanilla en la cuenta 
+                                        designada por la compañía.</p>
+                                    <p><b>Nota 3:</b> De acuerdo con la resolución No. 000010 del seis (06)
+                                         de febrero del año en curso expedida por la DIAN, las 
+                                         sociedades calificadas como “Grandes Contribuyentes”, 
+                                         como Bayport, a partir del primero (01) de septiembre 
+                                         de 2018 y en adelante deben expedir a sus clientes factura 
+                                         electrónica en la que se evidencie los conceptos cobrados 
+                                         mensualmente. Motivo por el cual empezarás a recibir por 
+                                         parte de Bayport, una factura electrónica en tu cuenta de 
+                                         correo registrada con nosotros, por medio de la cual se 
+                                         discriminarán los conceptos cobrados durante el mes 
+                                         (p. ej. intereses, intereses de mora, fianza) y otros conceptos 
+                                         tales como cheques, transferencias, certificaciones emitidas, 
+                                         entre otros. Es preciso aclarar que este documento contiene 
+                                         los conceptos cancelados durante el mes a través de los canales 
+                                         de recaudo establecidos por Bayport y no corresponde a un cobro 
+                                         adicional que se esté generando. Recuerda que a través de 
+                                         nuestra página web <a href="https://www.bayportcolombia.com/">www.bayportcolombia.com</a> 
+                                         asección Portal de Clientes puedes gestionar tus 
+                                         solicitudes de Certificación de Saldo, Devolución, Paz 
+                                         y Salvo, Aclaración de Desembolso, Tabla de Amortización, 
+                                         Obligación al día, Declaración de Renta, Condiciones de 
+                                         Seguro, Actualización de datos, Condiciones de Crédito 
+                                         y Refinanciación. </p>
+                                    <p><b>Nota 4:</b> En caso de que la recepción del pago de la primera 
+                                        cuota ocurra antes de la fecha de pago esperado, no habrá 
+                                        lugar a devolución de dicho valor al cliente, sino que se 
+                                        aplicará a su crédito de conformidad con las condiciones 
+                                        del mismo y el cobro de interés corriente correspondiente 
+                                        al periodo de gracia se cobrará en forma proporcional hasta 
+                                        el día en que ocurra la recepción del pago.</p>
+                                    <p><b>Nota 5:</b> Con esto estás expresando la aceptación de los 
+                                        términos del contrato y tu obligación de cumplir con los 
+                                        pagos y otras condiciones de la manera estipulada. Todo 
+                                        lo anterior en el entendimiento de que tu aceptación es 
+                                        equivalente a la firma en el acuerdo, según lo establecido 
+                                        por la Ley No. 527 de 1999, mediante la cual se define y 
+                                        regula el acceso y uso de los mensajes de datos. Comercio 
+                                        electrónico y firmas digitales. Por favor no responder 
+                                        a este correo.</p>
+                                    <p><b>Nota 6:</b> Estudio y Administración del Crédito: Obedece a una 
+                                        tarifa porcentual sobre el valor del crédito que será 
+                                        causado y / o pagadero, a elección del CLIENTE, de forma 
+                                        diferida a través de las cuotas del crédito, o al desembolso 
+                                        del mismo, pero en todo caso no más allá de la fecha de 
+                                        terminación efectiva de este por cualquier causa; 
+                                        información contenida en el contrato de crédito.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <!--footer bayport-->
+            <tr>
+                <td>
+                    <table class="mx-cont my-cont" style="background:#F0FAFE;">
+                        <tbody>
+                            <!--url portal bayport-->
+                            <tr>
+                                <td class="txt-center my-cont f-18">
+                                    <a href="https://www.bayportcolombia.com/">www.bayportcolombia.com</a>
+                                </td>
+                            </tr>
+                            <!--logos redes-->
+                            <tr>
+                                <td>
+                                    <table class="txt-center l-bottom my-cont">
+                                        <tbody>
+                                            <tr>
+                                                <td width="15%"></td>
+                                                <td>
+                                                    <a href="https://www.facebook.com/bayportcolombia"><img src="https://storage-masivdrive.masivapp.com/4783/90338731-4821-43ef-a164-f0ec8d042b45/ecd2c9ba-1223-4db1-84d2-2012b5e1a384.png" alt="" ></a>
+                                                </td>
+                                                <td>
+                                                    <a href="https://www.instagram.com/bayportcolombia/"><img src="https://storage-masivdrive.masivapp.com/4783/90338731-4821-43ef-a164-f0ec8d042b45/ce807033-2ccd-4827-8fcf-822f7ebb13e1.png" alt=""></a>
+                                                </td>
+                                                <td>
+                                                    <a href="https://www.linkedin.com/company/bayportcolombia"><img src="https://storage-masivdrive.masivapp.com/4783/90338731-4821-43ef-a164-f0ec8d042b45/b87b20c7-0ea0-448c-b0f8-196e7808043a.png" alt=""></a>
+                                                </td>
+                                                <td>
+                                                    <a href="https://twitter.com/BayportColombia"><img src="https://storage-masivdrive.masivapp.com/4783/90338731-4821-43ef-a164-f0ec8d042b45/2b9cd6bc-a9a0-4f5c-829c-cfa3f69f624f.png" alt=""></a>
+                                                </td>
+                                                <td>
+                                                    <a href="https://www.youtube.com/@BayportColombiaOficial"><img src="https://storage-masivdrive.masivapp.com/4783/90338731-4821-43ef-a164-f0ec8d042b45/632afda9-d521-4b9c-83ce-529816edb26d.png" alt=""></a>
+                                                </td>
+                                                <td width="15%"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <!--Lineazul-->
+                            <tr>
+                                <td>
+                                    <table class="l-bottom my-cont">
+                                        <tbody>
+                                            <!--Titulo lineazul-->
+                                            <tr>
+                                                <td class="txt-center">
+                                                    <img src="https://storage-masivdrive.masivapp.com/4783/90338731-4821-43ef-a164-f0ec8d042b45/f89a8418-5e5e-4965-8143-741b6260b0fa.png" alt="" >
+                                                </td>
+                                            </tr>
+                                            <!--Numeros lineazul-->
+                                            <tr>
+                                                <td>
+                                                    <table>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="txt-center w-50">
+                                                                    <p class="f-18">Línea de atención Bogotá<br>
+                                                                    <span class="f-20"><b>601 744 2484</b></span></p>
+                                                                </td>
+                                                                <td class="txt-center w-50">
+                                                                    <p class="f-18">Línea de atención nacional<br>
+                                                                    <span class="f-20"><b>018000 113 881</b></span></p>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <!--Disclaimer lineazul-->
+                                            <tr>
+                                                <td class="txt-center f-12">
+                                                    <p>Llamadas desde celular deben realizarse a la 
+                                                        línea de atención en Bogotá. Las llamadas desde 
+                                                        teléfono fijo fuera de Bogotá, deben realizarse 
+                                                        a la línea de atención nacional.
+                                                        Horario de atención:  lunes a viernes de 8:00 a.m. 
+                                                        a 5:00 p.m. en días hábiles.</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <!--Cierre copywrite-->
+                            <tr>
+                                <td>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td class="txt-center f-12">
+                                                    <p>© Bayport Colombia S.A. Todos los derechos reservados</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</body>
+</html>
