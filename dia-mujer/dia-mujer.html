@@ -8,16 +8,13 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
     <title>Día de la Mujer</title>
     <style>
         @media (prefers-color-scheme: light) {
             body {
                 background-color: #ffffff;
-                /* Color de fondo para el modo claro */
             }
 
             a {
@@ -27,16 +24,12 @@
             p {
                 color: #0F1141;
                 font-family: 'Lato', sans-serif;
-                /* Color de texto para el modo claro */
             }
-
-            /* Agrega otros estilos específicos para el modo claro aquí */
         }
 
         @media (prefers-color-scheme: dark) {
             body {
                 background-color: #333333;
-                /* Color de fondo para el modo oscuro */
             }
 
             a {
@@ -46,15 +39,11 @@
             p {
                 color: #ffffff;
                 font-family: 'Lato', sans-serif;
-                /* Color de texto para el modo oscuro */
             }
-
-            /* Agrega otros estilos específicos para el modo oscuro aquí */
         }
 
         .header {
-            background: url(https://raw.githubusercontent.com/mercadeoBP/mails/main/dia-mujer/src/BgHeader.png) no-repeat center center;
-            background-size: 100% auto;
+            position: relative;
             padding: 10px 20px;
             font-family: 'Lato', sans-serif;
         }
@@ -78,11 +67,43 @@
             font-size: 13px;
             font-weight: 600;
         }
+
         .footer {
-            background: url(https://raw.githubusercontent.com/mercadeoBP/mails/main/dia-mujer/src/BgFooter.png);
-            background-size: cover;
-            padding: 50px 20px 20px 10px;
+            position: relative;
+            padding: 0px 20px 20px 10px;
             font-family: 'Lato', sans-serif;
+            top: -120px;
+        }
+
+        .bg-header img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .bg-footer img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-container,
+        .footer-container {
+            position: relative;
+        }
+
+        .header-content,
+        .footer-content {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            width: 100%;
+            z-index: 2;
         }
     </style>
 </head>
@@ -92,27 +113,37 @@
         <!-- Header -->
         <tr>
             <td colspan="2" class="header">
-                <table cellpadding="0" cellspacing="0" width="100%">
-                    <tr>
-                        <td width="50%" align="left" class="logo-header">
-                            <img src="https://raw.githubusercontent.com/mercadeoBP/mails/main/dia-mujer/src/LogoHeader.png" alt="Logo">
-                        </td>
-                        <td width="50%" align="right" class="slogan">
-                            <p>Un amor único</p>
-                        </td>
-                    </tr>
-                </table>
+                <div class="header-container">
+                    <div class="header-content">
+                        <table cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td width="50%" align="left" class="logo-header">
+                                    <img src="https://raw.githubusercontent.com/mercadeoBP/mails/main/dia-mujer/src/LogoHeader.png" alt="Logo">
+                                </td>
+                                <td width="50%" align="right" class="slogan">
+                                    <p>Un amor único</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <!-- Header Background -->
+        <tr>
+            <td class="bg-header" style="padding: 0;">
+                <img src="https://raw.githubusercontent.com/mercadeoBP/mails/main/dia-mujer/src/BgHeader.png" alt="Header Background">
             </td>
         </tr>
         <!-- Imagen de encabezado -->
         <tr>
-            <td align="center">
+            <td align="center" class="content">
                 <img src="https://raw.githubusercontent.com/mercadeoBP/mails/main/dia-mujer/src/Encabezado.png" alt="Encabezado" style="width: 100%;">
             </td>
         </tr>
         <!-- Contenido -->
         <tr>
-            <td align="center" style="padding: 0px 20px;">
+            <td align="center" style="padding: 0px 20px;" class="content">
                 <p style="font-size: 18px; line-height: 24px; text-align: center;">En el Día de la Mujer, reconocemos a
                     todas las mujeres valientes y empoderadas que con su fuerza y determinación, impulsan un futuro
                     brillante para quienes las rodean.</p>
@@ -123,41 +154,41 @@
         </tr>
         <!-- Imagen de equipo -->
         <tr>
-            <td align="right">
+            <td align="right" class="content">
                 <img src="https://raw.githubusercontent.com/mercadeoBP/mails/main/dia-mujer/src/EquipoBayport.png" alt="Segunda imagen" style="width: 50%;">
+            </td>
+        </tr>
+        <!-- Footer Background -->
+        <tr>
+            <td class="bg-footer" style="padding: 0;">
+                <img src="https://raw.githubusercontent.com/mercadeoBP/mails/main/dia-mujer/src/BgFooter.png" alt="Footer Background">
             </td>
         </tr>
         <!-- Footer -->
         <tr>
             <td align="center" class="footer">
-                <table cellpadding="0" cellspacing="0" width="100%">
-                    <tr>
-                        <td width="50%" align="left">
-                            <a href="http://www.bayportcolombia.com"
-                                style="text-decoration: none; color: inherit; padding-left: 20px; font-weight: 700;">www.bayportcolombia.com</a>
-                        </td>
-                        <td width="50%" align="right">
-                            <a href="https://www.facebook.com/bayportcolombia/" style="text-decoration: none; color: inherit; margin-right: 5px;"><img
-                                    src="https://raw.githubusercontent.com/mercadeoBP/mails/main/dia-mujer/src/Facebook.png" alt="Facebook" style="width: 35px;"></a>
-                            <a href="https://twitter.com/BayportColombia" style="text-decoration: none; color: inherit; margin-right: 5px;"><img
-                                    src="https://raw.githubusercontent.com/mercadeoBP/mails/main/dia-mujer/src/X.png" alt="Facebook" style="width: 35px;"></a>
-                            <a href="https://www.instagram.com/bayportcolombia/" style="text-decoration: none; color: inherit; margin-right: 5px;"><img
-                                    src="https://raw.githubusercontent.com/mercadeoBP/mails/main/dia-mujer/src/Instagram.png" alt="Instagram" style="width: 35px;"></a>
-                            <a href="https://www.linkedin.com/company/bayportcolombia/mycompany/verification/" style="text-decoration: none; color: inherit; margin-right: 5px;"><img
-                                    src="https://raw.githubusercontent.com/mercadeoBP/mails/main/dia-mujer/src/Linkedin.png" alt="LinkedIn" style="width: 35px;"></a>
-                            <a href="https://www.youtube.com/channel/UCXYKv8n8RsPqKlxxC6bT2Xw" style="text-decoration: none; color: inherit; margin-right: 5px;"><img
-                                    src="https://raw.githubusercontent.com/mercadeoBP/mails/main/dia-mujer/src/Youtube.png" alt="YouTube" style="width: 35px;"></a>
-                        </td>
-                    </tr>
-                </table>
-                <hr style="margin-top: 20px; border: 1px solid #ddd; width: 85%;">
-                <p style="font-size: 12px; text-align: center; margin-top: 10px;">© Bayport Colombia S.A. Todos los
-                    derechos reservados</p>
+                <div class="footer-container">
+                    <div class="footer-content">
+                        <table cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td width="50%" align="left">
+                                    <a href="http://www.bayportcolombia.com" style="text-decoration: none; color: inherit; padding-left: 20px; font-weight: 700;">www.bayportcolombia.com</a>
+                                </td>
+                                <td width="50%" align="right">
+                                    <a href="https://www.facebook.com/bayportcolombia/" style="text-decoration: none; color: inherit; margin-right: 5px;"><img src="https://raw.githubusercontent.com/mercadeoBP/mails/main/dia-mujer/src/Facebook.png" alt="Facebook" style="width: 35px;"></a>
+                                    <a href="https://twitter.com/BayportColombia" style="text-decoration: none; color: inherit; margin-right: 5px;"><img src="https://raw.githubusercontent.com/mercadeoBP/mails/main/dia-mujer/src/X.png" alt="Facebook" style="width: 35px;"></a>
+                                    <a href="https://www.instagram.com/bayportcolombia/" style="text-decoration: none; color: inherit; margin-right: 5px;"><img src="https://raw.githubusercontent.com/mercadeoBP/mails/main/dia-mujer/src/Instagram.png" alt="Instagram" style="width: 35px;"></a>
+                                    <a href="https://www.linkedin.com/company/bayportcolombia/mycompany/verification/" style="text-decoration: none; color: inherit; margin-right: 5px;"><img src="https://raw.githubusercontent.com/mercadeoBP/mails/main/dia-mujer/src/Linkedin.png" alt="LinkedIn" style="width: 35px;"></a>
+                                    <a href="https://www.youtube.com/channel/UCXYKv8n8RsPqKlxxC6bT2Xw" style="text-decoration: none; color: inherit; margin-right: 5px;"><img src="https://raw.githubusercontent.com/mercadeoBP/mails/main/dia-mujer/src/Youtube.png" alt="YouTube" style="width: 35px;"></a>
+                                </td>
+                            </tr>
+                        </table>
+                        <hr style="margin-top: 20px; border: 1px solid #ddd; width: 85%;">
+                        <p style="font-size: 12px; text-align: center; margin-top: 10px;">© Bayport Colombia S.A. Todos los derechos reservados</p>
+                    </div>
+                </div>
             </td>
         </tr>
-    </table>
-    </td>
-    </tr>
     </table>
 </body>
 
